@@ -14,7 +14,7 @@ namespace AnalisisMedicos.Entidades
         public int TipoId { get; set; }
         public string Descripcion { get; set; }
 
-        TiposAnalisis()
+        public TiposAnalisis()
         {
             TipoId = 0;
             Descripcion = string.Empty;
