@@ -16,5 +16,10 @@ namespace AnalisisMedicos
         {
             InitializeComponent();
         }
+
+        private void AnalisisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
