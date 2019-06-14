@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnalisisMedicos.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace AnalisisMedicos
 
         private void AnalisisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            rUsuarios usuarios = new rUsuarios();
+            usuarios.Show();
         }
     }
 }

@@ -26,6 +26,7 @@ namespace AnalisisMedicos.UI.Registros
 
         private void Guardar_button_Click(object sender, EventArgs e)
         {
+            MyErrorProvider.Clear();
             Usuarios Usuario;
             bool paso = false;
 
@@ -138,31 +139,32 @@ namespace AnalisisMedicos.UI.Registros
 
         private bool Validar()
         {
+            MyErrorProvider.Clear();
             bool paso = true;
 
             if(string.IsNullOrWhiteSpace(Nombre_textBox.Text))
             {
-                MessageBox.Show("No Puede dejar el campo Nombre vacio", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyErrorProvider.SetError(Nombre_textBox, "No Puede dejar el campo Nombre vacio");
                 paso = false;
             }
 
             if (string.IsNullOrWhiteSpace(Email_textBox.Text))
             {
-                MessageBox.Show("No Puede dejar el campo E-Mail vacio", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyErrorProvider.SetError(Email_textBox, "No Puede dejar el campo E - Mail vacio");
                 paso = false;
             }
 
 
             if (Usuario_textBox.Text == string.Empty)
             {
-                MessageBox.Show("No Puede dejar el campo Usuario vacio", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyErrorProvider.SetError(Usuario_textBox,"No Puede dejar el campo Usuario vacio");
                 paso = false;
             }
 
 
             if (string.IsNullOrWhiteSpace(Clave_textBox.Text))
             {
-                MessageBox.Show("No Puede dejar el campo Clave vacio", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyErrorProvider.SetError(Clave_textBox,"No Puede dejar el campo Clave vacio");
                 paso = false;
             }
    
