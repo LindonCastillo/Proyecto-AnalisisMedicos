@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Registros\rAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rAnalisis.Designer.cs">
+      <DependentUpon>rAnalisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Registros\rAnalisis.resx">
+      <DependentUpon>rAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </EmbeddedResource>

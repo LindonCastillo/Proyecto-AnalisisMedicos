@@ -23,5 +23,11 @@ namespace AnalisisMedicos
             rUsuarios usuarios = new rUsuarios();
             usuarios.Show();
         }
+
+        private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rAnalisis analisis = new rAnalisis();
+            analisis.Show();
+        }
     }
 }
