@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AnalisisMedicos.BLL
 {
-    public class UsuarioBLL
+    public class UsuariosBLL
     {
         public static bool Guardar(Usuarios usuario)
         {

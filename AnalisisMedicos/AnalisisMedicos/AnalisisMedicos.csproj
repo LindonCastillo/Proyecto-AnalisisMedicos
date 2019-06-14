@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="BLL\AnalisisBLL.cs" />
     <Compile Include="BLL\TiposAnalisisBLL.cs" />
-    <Compile Include="BLL\UsuarioBLL.cs" />
+    <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Analisis.cs" />
     <Compile Include="Entidades\AnalisisDetalle.cs" />
