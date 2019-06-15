@@ -12,13 +12,13 @@ namespace AnalisisMedicos.Entidades
         [Key]
         public int AnalisisId { get; set; }
         public int TipoId { get; set; }
-        public string Descripcion { get; set; }
+        public string Resultado { get; set; }
 
         public AnalisisDetalle()
         {
             AnalisisId = 0;
             TipoId = 0;
-            Descripcion = string.Empty;
+            Resultado = string.Empty;
         }
     }
 }

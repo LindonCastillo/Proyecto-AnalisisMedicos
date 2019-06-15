@@ -16,5 +16,6 @@ namespace AnalisisMedicos.UI.Registros
         {
             InitializeComponent();
         }
+
     }
 }
