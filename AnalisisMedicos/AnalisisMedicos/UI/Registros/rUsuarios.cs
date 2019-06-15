@@ -112,7 +112,7 @@ namespace AnalisisMedicos.UI.Registros
         {
             Usuarios Usuario = new Usuarios();
             Usuario.UsuarioId = Convert.ToInt32(UsuarioId_numericUpDown.Value);
-            Usuario.Nombres = Nombre_textBox.Text.Trim();
+            Usuario.Nombre = Nombre_textBox.Text.Trim();
             Usuario.Email = Email_textBox.Text.Trim();
             Usuario.Usuario = Usuario_textBox.Text.Trim();
             Usuario.Clave = Clave_textBox.Text.Trim();
@@ -124,7 +124,7 @@ namespace AnalisisMedicos.UI.Registros
         private void LlenaCampo(Usuarios Usuario)
         {
             UsuarioId_numericUpDown.Value = Usuario.UsuarioId;
-            Nombre_textBox.Text = Usuario.Nombres;
+            Nombre_textBox.Text = Usuario.Nombre;
             Email_textBox.Text = Usuario.Email;
             Usuario_textBox.Text = Usuario.Usuario;
             Clave_textBox.Text = Usuario.Clave;

@@ -40,14 +40,14 @@
             this.Usuario_comboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TipoAnalisis_comboBox = new System.Windows.Forms.ComboBox();
-            this.Resultado_textBox = new System.Windows.Forms.TextBox();
+            this.Remover_button = new System.Windows.Forms.Button();
             this.Agregar_button = new System.Windows.Forms.Button();
+            this.Resultado_textBox = new System.Windows.Forms.TextBox();
+            this.TipoAnalisis_comboBox = new System.Windows.Forms.ComboBox();
             this.Eliminar_button = new System.Windows.Forms.Button();
             this.Guardar_button = new System.Windows.Forms.Button();
             this.Nuevo_button = new System.Windows.Forms.Button();
             this.Buscar_button = new System.Windows.Forms.Button();
-            this.Remover_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).BeginInit();
             this.panel1.SuspendLayout();
@@ -159,20 +159,18 @@
             this.panel1.Size = new System.Drawing.Size(382, 272);
             this.panel1.TabIndex = 10;
             // 
-            // TipoAnalisis_comboBox
+            // Remover_button
             // 
-            this.TipoAnalisis_comboBox.FormattingEnabled = true;
-            this.TipoAnalisis_comboBox.Location = new System.Drawing.Point(21, 33);
-            this.TipoAnalisis_comboBox.Name = "TipoAnalisis_comboBox";
-            this.TipoAnalisis_comboBox.Size = new System.Drawing.Size(151, 21);
-            this.TipoAnalisis_comboBox.TabIndex = 9;
-            // 
-            // Resultado_textBox
-            // 
-            this.Resultado_textBox.Location = new System.Drawing.Point(199, 33);
-            this.Resultado_textBox.Name = "Resultado_textBox";
-            this.Resultado_textBox.Size = new System.Drawing.Size(127, 20);
-            this.Resultado_textBox.TabIndex = 10;
+            this.Remover_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Remover_button.Image = global::AnalisisMedicos.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
+            this.Remover_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Remover_button.Location = new System.Drawing.Point(8, 238);
+            this.Remover_button.Name = "Remover_button";
+            this.Remover_button.Size = new System.Drawing.Size(129, 29);
+            this.Remover_button.TabIndex = 12;
+            this.Remover_button.Text = "-Remover Fila";
+            this.Remover_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Remover_button.UseVisualStyleBackColor = true;
             // 
             // Agregar_button
             // 
@@ -183,6 +181,21 @@
             this.Agregar_button.TabIndex = 11;
             this.Agregar_button.Text = "+";
             this.Agregar_button.UseVisualStyleBackColor = true;
+            // 
+            // Resultado_textBox
+            // 
+            this.Resultado_textBox.Location = new System.Drawing.Point(199, 33);
+            this.Resultado_textBox.Name = "Resultado_textBox";
+            this.Resultado_textBox.Size = new System.Drawing.Size(127, 20);
+            this.Resultado_textBox.TabIndex = 10;
+            // 
+            // TipoAnalisis_comboBox
+            // 
+            this.TipoAnalisis_comboBox.FormattingEnabled = true;
+            this.TipoAnalisis_comboBox.Location = new System.Drawing.Point(21, 33);
+            this.TipoAnalisis_comboBox.Name = "TipoAnalisis_comboBox";
+            this.TipoAnalisis_comboBox.Size = new System.Drawing.Size(151, 21);
+            this.TipoAnalisis_comboBox.TabIndex = 9;
             // 
             // Eliminar_button
             // 
@@ -196,6 +209,7 @@
             this.Eliminar_button.Text = "Eliminar";
             this.Eliminar_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Eliminar_button.UseVisualStyleBackColor = true;
+            this.Eliminar_button.Click += new System.EventHandler(this.Eliminar_button_Click);
             // 
             // Guardar_button
             // 
@@ -209,6 +223,7 @@
             this.Guardar_button.Text = "Guardar";
             this.Guardar_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Guardar_button.UseVisualStyleBackColor = true;
+            this.Guardar_button.Click += new System.EventHandler(this.Guardar_button_Click);
             // 
             // Nuevo_button
             // 
@@ -222,6 +237,7 @@
             this.Nuevo_button.Text = "Nuevo";
             this.Nuevo_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Nuevo_button.UseVisualStyleBackColor = true;
+            this.Nuevo_button.Click += new System.EventHandler(this.Nuevo_button_Click);
             // 
             // Buscar_button
             // 
@@ -235,19 +251,7 @@
             this.Buscar_button.Text = "Buscar";
             this.Buscar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscar_button.UseVisualStyleBackColor = true;
-            // 
-            // Remover_button
-            // 
-            this.Remover_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Remover_button.Image = global::AnalisisMedicos.Properties.Resources.seo_social_web_network_internet_322_icon_icons_com_61532;
-            this.Remover_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Remover_button.Location = new System.Drawing.Point(8, 238);
-            this.Remover_button.Name = "Remover_button";
-            this.Remover_button.Size = new System.Drawing.Size(129, 29);
-            this.Remover_button.TabIndex = 12;
-            this.Remover_button.Text = "-Remover Fila";
-            this.Remover_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Remover_button.UseVisualStyleBackColor = true;
+            this.Buscar_button.Click += new System.EventHandler(this.Buscar_button_Click);
             // 
             // rAnalisis
             // 

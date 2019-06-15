@@ -11,7 +11,7 @@ namespace AnalisisMedicos.Entidades
     {
         [Key]
         public int UsuarioId { get; set; }
-        public string Nombres { get; set; }
+        public string Nombre { get; set; }
         public string Email { get; set; }
         public string Usuario { get; set; }
         public string Clave { get; set; }
@@ -20,7 +20,7 @@ namespace AnalisisMedicos.Entidades
         public Usuarios()
         {
             UsuarioId = 0;
-            Nombres = string.Empty;
+            Nombre = string.Empty;
             Email = string.Empty;
             Usuario = string.Empty;
             Clave = string.Empty;
