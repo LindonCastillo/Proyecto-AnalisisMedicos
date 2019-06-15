@@ -99,11 +99,11 @@ namespace AnalisisMedicos.UI.Registros
                 if (tiposAnalisis != null)
                 {
                     LlenarCampos(tiposAnalisis);
-                    MessageBox.Show("Tipo Analisis Encontrada!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tipo de Analisis Encontrado!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Tipo Analisis No Encontrada!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tipo de Analisis No Encontrado!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception)
@@ -152,8 +152,8 @@ namespace AnalisisMedicos.UI.Registros
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            TiposAnalisis ubicaciones = TiposAnalisisBLL.Buscar((int)TipoId_numericUpDown.Value);
-            return (ubicaciones != null);
+            TiposAnalisis analisis = TiposAnalisisBLL.Buscar((int)TipoId_numericUpDown.Value);
+            return (analisis != null);
         }
     }
 }

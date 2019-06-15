@@ -49,25 +49,110 @@ namespace AnalisisMedicos.UI.Registros
 
         private void Nuevo_button_Click(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
 
         private void Guardar_button_Click(object sender, EventArgs e)
         {
+            bool paso = false;
+            Analisis analisis;
 
+            if (!Validar())
+            {
+                return;
+            }
+
+            try
+            {
+                analisis = LlenarClase();
+
+                if (Id_numericUpDown.Value == 0)
+                {
+                    paso = AnalisisBLL.Guardar(analisis);
+                }
+                else
+                {
+                    if (!ExisteEnLaBaseDeDatos())
+                    {
+                        MessageBox.Show("No se puede modificar un Analisis que no existe", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    paso = AnalisisBLL.Modificar(analisis);
+                    MessageBox.Show("Se modifico con Exito!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                if (paso)
+                {
+                    Limpiar();
+                    MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No fue posible guardar!!");
+            }
         }
 
         private void Eliminar_button_Click(object sender, EventArgs e)
         {
+            int id;
+            int.TryParse(Id_numericUpDown.Text, out id);
 
+            Limpiar();
+            try
+            {
+                if (AnalisisBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar esta ubicación", "No Hubo Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error eliminando");
+            }
         }
 
         private void Buscar_button_Click(object sender, EventArgs e)
         {
+            Analisis analisis;
+            int id = Convert.ToInt32(Id_numericUpDown.Value);
 
+            Limpiar();
+            try
+            {
+                analisis = AnalisisBLL.Buscar(id);
+                if (analisis != null)
+                {
+                    LlenarCampos(analisis);
+                    MessageBox.Show("Analisis Encontrado!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Analisis No Encontrado!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al buscar");
+            }
         }
 
-        private void limpiar()
+        private bool ExisteEnLaBaseDeDatos()
+        {
+            Analisis analisis = AnalisisBLL.Buscar((int)Id_numericUpDown.Value);
+            return (analisis != null);
+        }
+
+        private void Limpiar()
         {
             errorProvider.Clear();
 
@@ -95,7 +180,7 @@ namespace AnalisisMedicos.UI.Registros
             return analisis;
         }
 
-        private void LlenaCampos(Analisis analisis)
+        private void LlenarCampos(Analisis analisis)
         {
             Id_numericUpDown.Value = analisis.AnalisisId;
             Fecha_dateTimePicker.Value = analisis.Fecha;
