@@ -114,6 +114,8 @@ namespace AnalisisMedicos.UI.Registros
 
         private void Limpiar()
         {
+            errorProvider.Clear();
+
             TipoId_numericUpDown.Value = 0;
             Descripcion_textBox.Text = string.Empty;
         }

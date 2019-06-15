@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rAnalisis));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,9 +49,11 @@
             this.Guardar_button = new System.Windows.Forms.Button();
             this.Nuevo_button = new System.Windows.Forms.Button();
             this.Buscar_button = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +126,7 @@
             this.Fecha_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Fecha_dateTimePicker.Location = new System.Drawing.Point(82, 69);
             this.Fecha_dateTimePicker.Name = "Fecha_dateTimePicker";
-            this.Fecha_dateTimePicker.Size = new System.Drawing.Size(187, 20);
+            this.Fecha_dateTimePicker.Size = new System.Drawing.Size(215, 20);
             this.Fecha_dateTimePicker.TabIndex = 7;
             // 
             // Usuario_comboBox
@@ -131,7 +134,7 @@
             this.Usuario_comboBox.FormattingEnabled = true;
             this.Usuario_comboBox.Location = new System.Drawing.Point(82, 111);
             this.Usuario_comboBox.Name = "Usuario_comboBox";
-            this.Usuario_comboBox.Size = new System.Drawing.Size(322, 21);
+            this.Usuario_comboBox.Size = new System.Drawing.Size(297, 21);
             this.Usuario_comboBox.TabIndex = 8;
             // 
             // label6
@@ -175,7 +178,7 @@
             // Agregar_button
             // 
             this.Agregar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Agregar_button.Location = new System.Drawing.Point(333, 30);
+            this.Agregar_button.Location = new System.Drawing.Point(346, 30);
             this.Agregar_button.Name = "Agregar_button";
             this.Agregar_button.Size = new System.Drawing.Size(23, 23);
             this.Agregar_button.TabIndex = 11;
@@ -244,7 +247,7 @@
             this.Buscar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buscar_button.Image = global::AnalisisMedicos.Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
             this.Buscar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscar_button.Location = new System.Drawing.Point(180, 26);
+            this.Buscar_button.Location = new System.Drawing.Point(208, 26);
             this.Buscar_button.Name = "Buscar_button";
             this.Buscar_button.Size = new System.Drawing.Size(89, 29);
             this.Buscar_button.TabIndex = 11;
@@ -252,6 +255,10 @@
             this.Buscar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscar_button.UseVisualStyleBackColor = true;
             this.Buscar_button.Click += new System.EventHandler(this.Buscar_button_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // rAnalisis
             // 
@@ -277,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +311,6 @@
         private System.Windows.Forms.Button Agregar_button;
         private System.Windows.Forms.TextBox Resultado_textBox;
         private System.Windows.Forms.ComboBox TipoAnalisis_comboBox;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

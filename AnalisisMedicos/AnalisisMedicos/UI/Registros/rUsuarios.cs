@@ -100,6 +100,8 @@ namespace AnalisisMedicos.UI.Registros
 
         private void Limpiar()
         {
+            MyErrorProvider.Clear();
+
             UsuarioId_numericUpDown.Value = 0;
             Nombre_textBox.Text = string.Empty;
             Email_textBox.Text = string.Empty;

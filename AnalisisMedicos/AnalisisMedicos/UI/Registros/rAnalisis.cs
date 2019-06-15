@@ -14,9 +14,11 @@ namespace AnalisisMedicos.UI.Registros
 {
     public partial class rAnalisis : Form
     {
+        public List<AnalisisDetalle> Detalle { get; set; }
         public rAnalisis()
         {
             InitializeComponent();
+            this.Detalle = new List<AnalisisDetalle>();
             LlenarComboBox();
             LlenarComboBox2();
         }
@@ -64,5 +66,20 @@ namespace AnalisisMedicos.UI.Registros
         {
 
         }
+
+        private void limpiar()
+        {
+            errorProvider.Clear();
+
+            Id_numericUpDown.Value = 0;
+            Fecha_dateTimePicker.Value = DateTime.Now;
+            Resultado_textBox.Text = string.Empty;
+
+            this.Detalle = new List<AnalisisDetalle>();
+            CargarGrid();
+
+        }
+
+        private Analisis LlenarClase
     }
 }
