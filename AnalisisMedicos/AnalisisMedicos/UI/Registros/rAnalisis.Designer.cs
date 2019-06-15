@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Detalle_dataGridView = new System.Windows.Forms.DataGridView();
             this.Id_numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Fecha_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Usuario_comboBox = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@
             this.Nuevo_button = new System.Windows.Forms.Button();
             this.Buscar_button = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Detalle_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -106,13 +106,13 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Resultado:";
             // 
-            // dataGridView1
+            // Detalle_dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(361, 172);
-            this.dataGridView1.TabIndex = 5;
+            this.Detalle_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Detalle_dataGridView.Location = new System.Drawing.Point(8, 60);
+            this.Detalle_dataGridView.Name = "Detalle_dataGridView";
+            this.Detalle_dataGridView.Size = new System.Drawing.Size(361, 172);
+            this.Detalle_dataGridView.TabIndex = 5;
             // 
             // Id_numericUpDown
             // 
@@ -156,7 +156,7 @@
             this.panel1.Controls.Add(this.TipoAnalisis_comboBox);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.Detalle_dataGridView);
             this.panel1.Location = new System.Drawing.Point(22, 157);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(382, 272);
@@ -174,6 +174,7 @@
             this.Remover_button.Text = "-Remover Fila";
             this.Remover_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Remover_button.UseVisualStyleBackColor = true;
+            this.Remover_button.Click += new System.EventHandler(this.Remover_button_Click);
             // 
             // Agregar_button
             // 
@@ -184,6 +185,7 @@
             this.Agregar_button.TabIndex = 11;
             this.Agregar_button.Text = "+";
             this.Agregar_button.UseVisualStyleBackColor = true;
+            this.Agregar_button.Click += new System.EventHandler(this.Agregar_button_Click);
             // 
             // Resultado_textBox
             // 
@@ -280,7 +282,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rAnalisis";
             this.Text = "rAnalisis";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Detalle_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -297,7 +299,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Detalle_dataGridView;
         private System.Windows.Forms.NumericUpDown Id_numericUpDown;
         private System.Windows.Forms.DateTimePicker Fecha_dateTimePicker;
         private System.Windows.Forms.ComboBox Usuario_comboBox;
