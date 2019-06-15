@@ -18,11 +18,16 @@ namespace AnalisisMedicos.UI.Registros
         public rAnalisis()
         {
             InitializeComponent();
-            this.Usuario_comboBox.SelectedItem = null;
-            this.TipoAnalisis_comboBox.SelectedItem = null;
+            limpiarCombobox();
             this.Detalle = new List<AnalisisDetalle>();
             LlenarComboBox();
             LlenarComboBox2();
+        }
+
+        private void limpiarCombobox()
+        {
+            this.Usuario_comboBox.SelectedItem = null;
+            this.TipoAnalisis_comboBox.SelectedItem = null;
         }
 
         private void LlenarComboBox()
@@ -102,10 +107,12 @@ namespace AnalisisMedicos.UI.Registros
 
         private void Eliminar_button_Click(object sender, EventArgs e)
         {
-            int id;
-            int.TryParse(Id_numericUpDown.Text, out id);
-
+            //int id;
+            //int.TryParse(Id_numericUpDown.Value, out id);
+            int id = (int)Id_numericUpDown.Value;
             Limpiar();
+
+
             try
             {
                 if (AnalisisBLL.Eliminar(id))
@@ -114,7 +121,7 @@ namespace AnalisisMedicos.UI.Registros
                 }
                 else
                 {
-                    MessageBox.Show("No se puede eliminar esta ubicación", "No Hubo Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se puede eliminar este Analisis", "No Hubo Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
@@ -126,7 +133,7 @@ namespace AnalisisMedicos.UI.Registros
         private void Buscar_button_Click(object sender, EventArgs e)
         {
             Analisis analisis;
-            int id = Convert.ToInt32(Id_numericUpDown.Value);
+            int id = (int)Id_numericUpDown.Value;
 
             Limpiar();
             try
@@ -162,8 +169,7 @@ namespace AnalisisMedicos.UI.Registros
             Fecha_dateTimePicker.Value = DateTime.Now;
             Resultado_textBox.Text = string.Empty;
 
-            this.Usuario_comboBox.SelectedItem = null;
-            this.TipoAnalisis_comboBox.SelectedItem = null;
+            limpiarCombobox();
 
             this.Detalle = new List<AnalisisDetalle>();
             CargarGrid();
@@ -237,6 +243,22 @@ namespace AnalisisMedicos.UI.Registros
 
         private void Agregar_button_Click(object sender, EventArgs e)
         {
+            var tp = new List<TiposAnalisis>();
+            tp = TiposAnalisisBLL.GetList(p => true);
+            string cadena = "";
+            cadena = Usuario_comboBox.Text;
+            int idTipo=0;
+
+            foreach(var i in tp)
+            {
+                if(i.Descripcion.Equals(cadena))
+                {
+                    idTipo = i.TipoId;
+                    MessageBox.Show("La condicion Funciona");
+
+                }
+            }
+
             if (Detalle_dataGridView.DataSource != null)
                 this.Detalle = (List<AnalisisDetalle>)Detalle_dataGridView.DataSource;
 
@@ -244,7 +266,7 @@ namespace AnalisisMedicos.UI.Registros
             this.Detalle.Add(
                 new AnalisisDetalle(
                     AnalisisId: (int)Id_numericUpDown.Value,
-                    TipoId: (int)Id_numericUpDown.Value,
+                    TipoId: (int)TipoAnalisis_comboBox.SelectedValue,
                     Resultado: Resultado_textBox.Text
                     )
                 );
@@ -252,8 +274,7 @@ namespace AnalisisMedicos.UI.Registros
             CargarGrid();
             Resultado_textBox.Focus();
             Resultado_textBox.Clear();
-            this.Usuario_comboBox.SelectedItem = null;
-            this.TipoAnalisis_comboBox.SelectedItem = null;
+            limpiarCombobox();
         }
 
     }
