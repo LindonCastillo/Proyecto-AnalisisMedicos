@@ -18,6 +18,8 @@ namespace AnalisisMedicos.UI.Registros
         public rAnalisis()
         {
             InitializeComponent();
+            this.Usuario_comboBox.SelectedItem = null;
+            this.TipoAnalisis_comboBox.SelectedItem = null;
             this.Detalle = new List<AnalisisDetalle>();
             LlenarComboBox();
             LlenarComboBox2();
@@ -193,13 +195,6 @@ namespace AnalisisMedicos.UI.Registros
         {
             bool paso = true;
             errorProvider.Clear();
-
-            if (string.IsNullOrWhiteSpace(Resultado_textBox.Text))
-            {
-                errorProvider.SetError(Resultado_textBox, "Debe agregar un Usuario");
-                paso = false;
-            }
-
             if (Usuario_comboBox.Items.Count <= 0)
             {
                 errorProvider.SetError(Usuario_comboBox, "Debe agregar un Usuario");
@@ -249,7 +244,7 @@ namespace AnalisisMedicos.UI.Registros
             this.Detalle.Add(
                 new AnalisisDetalle(
                     AnalisisId: (int)Id_numericUpDown.Value,
-                    TipoId: TipoAnalisis_comboBox.Text,
+                    TipoId: (int)Id_numericUpDown.Value,
                     Resultado: Resultado_textBox.Text
                     )
                 );

@@ -20,5 +20,12 @@ namespace AnalisisMedicos.Entidades
             TipoId = 0;
             Resultado = string.Empty;
         }
+
+        public AnalisisDetalle(int AnalisisId, int TipoId, string Resultado)
+        {
+            this.AnalisisId = AnalisisId;
+            this.TipoId = TipoId;
+            this.Resultado = Resultado;
+        }
     }
 }

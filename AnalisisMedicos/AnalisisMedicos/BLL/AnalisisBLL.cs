@@ -45,7 +45,7 @@ namespace AnalisisMedicos.BLL
                 foreach(var item in anterior.analisisDetalles)
                 {
                     if (!analisis.analisisDetalles.Exists(d => d.AnalisisId == item.AnalisisId))
-                        db.Entry(item).State = EntityState.Modified;
+                        db.Entry(item).State = EntityState.Deleted;
                 }
 
                 db.Entry(analisis).State = EntityState.Modified;
