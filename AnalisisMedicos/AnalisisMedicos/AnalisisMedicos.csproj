@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AnalisisBLL.cs" />
+    <Compile Include="BLL\TipoAnalisisBLL.cs" />
     <Compile Include="BLL\TiposAnalisisBLL.cs" />
     <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="UI\Registros\rAnalisis.Designer.cs">
       <DependentUpon>rAnalisis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rTiposAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rTiposAnalisis.Designer.cs">
+      <DependentUpon>rTiposAnalisis.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rUsuarios.cs">
       <SubType>Form</SubType>
@@ -96,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Registros\rAnalisis.resx">
       <DependentUpon>rAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rTiposAnalisis.resx">
+      <DependentUpon>rTiposAnalisis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>

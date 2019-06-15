@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rUsuarios));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -155,44 +156,56 @@
             // Buscar_button
             // 
             this.Buscar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscar_button.Location = new System.Drawing.Point(219, 16);
+            this.Buscar_button.Image = global::AnalisisMedicos.Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
+            this.Buscar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscar_button.Location = new System.Drawing.Point(210, 16);
             this.Buscar_button.Name = "Buscar_button";
-            this.Buscar_button.Size = new System.Drawing.Size(83, 27);
+            this.Buscar_button.Size = new System.Drawing.Size(92, 27);
             this.Buscar_button.TabIndex = 12;
             this.Buscar_button.Text = "Buscar";
+            this.Buscar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscar_button.UseVisualStyleBackColor = true;
             this.Buscar_button.Click += new System.EventHandler(this.Buscar_button_Click);
             // 
             // Eliminar_button
             // 
             this.Eliminar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Eliminar_button.Location = new System.Drawing.Point(221, 310);
+            this.Eliminar_button.Image = global::AnalisisMedicos.Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
+            this.Eliminar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminar_button.Location = new System.Drawing.Point(212, 305);
             this.Eliminar_button.Name = "Eliminar_button";
-            this.Eliminar_button.Size = new System.Drawing.Size(81, 27);
+            this.Eliminar_button.Size = new System.Drawing.Size(92, 27);
             this.Eliminar_button.TabIndex = 15;
             this.Eliminar_button.Text = "Eliminar";
+            this.Eliminar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminar_button.UseVisualStyleBackColor = true;
             this.Eliminar_button.Click += new System.EventHandler(this.Eliminar_button_Click);
             // 
             // Nuevo_button
             // 
             this.Nuevo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nuevo_button.Location = new System.Drawing.Point(28, 310);
+            this.Nuevo_button.Image = global::AnalisisMedicos.Properties.Resources.seo_social_web_network_internet_83_icon_icons_com_61502;
+            this.Nuevo_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevo_button.Location = new System.Drawing.Point(12, 305);
             this.Nuevo_button.Name = "Nuevo_button";
-            this.Nuevo_button.Size = new System.Drawing.Size(81, 27);
+            this.Nuevo_button.Size = new System.Drawing.Size(91, 27);
             this.Nuevo_button.TabIndex = 16;
             this.Nuevo_button.Text = "Nuevo";
+            this.Nuevo_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevo_button.UseVisualStyleBackColor = true;
             this.Nuevo_button.Click += new System.EventHandler(this.Nuevo_button_Click);
             // 
             // Guardar_button
             // 
             this.Guardar_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guardar_button.Location = new System.Drawing.Point(125, 310);
+            this.Guardar_button.Image = ((System.Drawing.Image)(resources.GetObject("Guardar_button.Image")));
+            this.Guardar_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardar_button.Location = new System.Drawing.Point(109, 305);
             this.Guardar_button.Name = "Guardar_button";
-            this.Guardar_button.Size = new System.Drawing.Size(81, 27);
+            this.Guardar_button.Size = new System.Drawing.Size(97, 27);
             this.Guardar_button.TabIndex = 17;
             this.Guardar_button.Text = "Guardar";
+            this.Guardar_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardar_button.UseVisualStyleBackColor = true;
             this.Guardar_button.Click += new System.EventHandler(this.Guardar_button_Click);
             // 
@@ -221,6 +234,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rUsuarios";
             this.Text = "Registro de Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioId_numericUpDown)).EndInit();

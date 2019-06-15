@@ -29,5 +29,11 @@ namespace AnalisisMedicos
             rAnalisis analisis = new rAnalisis();
             analisis.Show();
         }
+
+        private void TipoAnalisisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rTiposAnalisis tp = new rTiposAnalisis();
+            tp.Show();
+        }
     }
 }
